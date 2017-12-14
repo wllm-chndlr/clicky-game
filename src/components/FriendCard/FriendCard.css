@@ -1,33 +1,27 @@
 .card {
   /* background: #444; */
-  border: 2px #444 solid;
+  border: 2px rgb(255, 81, 0) solid;
   border-radius: 2px;
   width: 200px;
   height: 200px;
-  margin: 1rem;
+  margin: 2rem;
   position: relative;
-  box-shadow: 0px 3px 6px #999;
+  box-shadow: 6px 6px 6px #999;
 }
 
-.card > .card-image {
+.card > .img-container {
   height: 100%;
   overflow: hidden;
   background:rgb(255, 255, 255);
 }
-.card > .card-image > img {
-  /* height: 90%; */
+
+.card > .img-container > img {
+  height: 100%;
   /* background-size: cover; */
 }
 
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
-}
-
-.card-image:hover {
-  opacity: 0.9;
+.card:hover {
+  opacity: 0.8;
+  /* width: 210px;
+  height: 210px; */
 }
