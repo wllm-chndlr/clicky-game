@@ -2,7 +2,7 @@ nav {
   width: 100%;
   /* text-align: right; */
   font-size: 3rem;
-  color: #444;
+  color: #fff;
   margin-bottom: 50px;
   background-color: rgb(56, 56, 56);
   padding: 20px;
@@ -10,5 +10,10 @@ nav {
 }
 
 a {
-  margin-right: 10px;
+  margin-right: 10px;  
+}
+
+a:hover {
+  color: rgb(255, 72, 0);
+  text-decoration: none;
 }
