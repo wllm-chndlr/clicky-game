@@ -13,14 +13,22 @@ class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends,
-    count: 0
+    count: 0,
+    topscore: 0
   };
 
   // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
     // We always use the setState method to update a component's state
     this.setState({ count: this.state.count + 1 });
+    this.setState({ topscore: this.state.count + 1});
   };
+
+  handleCardClick = () => {
+    const shuffleArray = friend => friends.sort(() => Math.random() - 0.5);
+    this.setState({ friends })
+
+  }
 
   removeFriend = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
@@ -36,6 +44,7 @@ class App extends Component {
         <Nav
           title='Clicky Game'
           score={this.state.count}
+          topscore={this.state.topscore}
           >        
         </Nav>
 
@@ -44,10 +53,11 @@ class App extends Component {
         <Container>
           <Row>
             {this.state.friends.map(friend => (
-              <Column size="md-3 sm-4">
+              <Column size="md-3 sm-6">
                 <FriendCard
                   key={friend.id}
                   handleIncrement={this.handleIncrement}
+                  shuffleArray={this.shuffleArray}
                   removeFriend={this.removeFriend}
                   id={friend.id}
                   image={friend.image}
@@ -66,7 +76,7 @@ export default App;
 
 
 
-{/* <Container>
+/* <Container>
   <Row>
     <Column size="md-4 sm-4">title={Nav.title}</Column>)}
     <Column size="md-4 sm-4">
@@ -76,4 +86,4 @@ export default App;
       <h1>Score: {this.state.count}</h1>
     </Column>)}
   </Row>
-</Container>; */}
+</Container>; */

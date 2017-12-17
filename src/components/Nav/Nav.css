@@ -11,9 +11,10 @@ nav {
 
 a {
   margin-right: 10px;  
+  color: #fed420;
 }
 
 a:hover {
-  color: rgb(255, 72, 0);
+  color: #fed420;
   text-decoration: none;
 }

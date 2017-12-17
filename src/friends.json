@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "image": "http://www.simpsoncrazy.com/content/pictures/regulars/ComicBookGuy2.gif"
+    "image": "http://www.simpsoncrazy.com/content/pictures/regulars/ComicBookGuy2.gif",
+    "clicked": false
   },
   {
     "id": 2,
