@@ -9,6 +9,14 @@ import Column from "./Column";
 import friends from "./friends.json";
 import "./App.css";
 
+function shuffleFriends(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
@@ -19,17 +27,19 @@ class App extends Component {
   };
 
   handleShuffle = () => {
-    for (let i = friends.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [friends[i], friends[j]] = [friends[j], friends[i]];
-    }
+
+		// let friends = this.state.friends;
+    let shuffledFriends = shuffleFriends(friends);
+    this.setState({ friends: shuffledFriends });
+
     // this.setState({ friends });
-    console.log(friends);
+    console.log(this.state.friends);
   };
 
   handleIncrement = () => {
     this.setState({
       count: this.state.count + 1,
+      topscore: this.state.topscore + 1,
       rightwrong: "Correct!"
     });
 
@@ -62,7 +72,7 @@ class App extends Component {
         />
 
         <Title>
-          Try to click on each character without hitting any duplicates, or you'll
+          Try to click on each character. But don't hit any duplicates, or you'll
           DIE!!!
         </Title>
 
