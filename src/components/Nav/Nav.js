@@ -2,26 +2,29 @@ import React from "react";
 import "./Nav.css";
 
 const Nav = props => (
-  /* <h1 className="title">{props.children}</h1>; */
-
+  
   <nav>
+   
     <ul>
 
       <li className="brand">
         <a href="/">{props.title}</a>
       </li>
 
-      <li id="rw">{props.rightwrong}</li>
+      <li id="rw">
+        {props.rightWrong}
+      </li>
 
       <li>
         Current Score: {props.score}
       </li>
 
       <li>
-        Top Score: {props.topscore}
+        Top Score: {props.topScore}
       </li>
 
     </ul>
+
   </nav>
 );
 

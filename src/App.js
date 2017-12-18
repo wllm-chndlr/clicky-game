@@ -18,62 +18,67 @@ function shuffleFriends(array) {
 };
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+  // Set this.state
   state = {
     friends,
-    count: 0,
-    topscore: 0,
-    rightwrong: ""
+    currentScore: 0,
+    topScore: 0,
+    rightWrong: "",
+    clicked: [],
   };
 
-  handleShuffle = () => {
-
-		// let friends = this.state.friends;
-    let shuffledFriends = shuffleFriends(friends);
-    this.setState({ friends: shuffledFriends });
-
-    // this.setState({ friends });
-    console.log(this.state.friends);
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      this.handleIncrement();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+    } else {
+      this.handleReset();
+    }
   };
 
   handleIncrement = () => {
+    const newScore = this.state.currentScore + 1;
     this.setState({
-      count: this.state.count + 1,
-      topscore: this.state.topscore + 1,
-      rightwrong: "Correct!"
+      currentScore: newScore,
+      rightWrong: "Correct!"
     });
-
-    // if (this.state.topscore > this.state.count) { 
-    //   this.setState({topscore: this.state.topscore + 1});
-
+    if (newScore >= this.state.topScore) {
+      this.setState({ topScore: newScore });
+    }
+    else if (newScore === 12) {
+      this.setState({ rightWrong: "You win!" });
+    }
     this.handleShuffle();
-    };
-  
+  };
 
   handleReset = () => {
-    // this.setState({topscore: this.state.count});
-    this.setState({ 
-      count: 0,
-      topscore: this.state.topscore,
-      rightwrong: "Bork!"
+    this.setState({
+      currentScore: 0,
+      topScore: this.state.topScore,
+      rightWrong: "Glaven!",
+      clicked: []
     });
     this.handleShuffle();
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
+  handleShuffle = () => {
+    let shuffledFriends = shuffleFriends(friends);
+    this.setState({ friends: shuffledFriends });
+  };
+
   render() {
     return (
       <Wrapper>
         <Nav
-              title="Simpsons Clicky Game"
-              score={this.state.count}
-              topscore={this.state.topscore}
-              rightwrong={this.state.rightwrong}
+          title="Simpsons Clicky Game"
+          score={this.state.currentScore}
+          topScore={this.state.topScore}
+          rightWrong={this.state.rightWrong}
         />
 
         <Title>
-          Try to click on each character. But don't hit any duplicates, or you'll
-          DIE!!!
+          Try to click on each character, but don't hit any duplicates, or
+          we'll release the hounds!!!
         </Title>
 
         <Container>
@@ -82,12 +87,12 @@ class App extends Component {
               <Column size="md-3 sm-6">
                 <FriendCard
                   key={friend.id}
+                  handleClick={this.handleClick}
                   handleIncrement={this.handleIncrement}
-                  handleShuffle={this.handleShuffle}
                   handleReset={this.handleReset}
+                  handleShuffle={this.handleShuffle}
                   id={friend.id}
                   image={friend.image}
-                  // clicked={friend.clicked}
                 />
               </Column>
             ))}
@@ -99,18 +104,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-/* <Container>
-  <Row>
-    <Column size="md-4 sm-4">title={Nav.title}</Column>)}
-    <Column size="md-4 sm-4">
-      <h1>You lose!</h1>
-    </Column>)}
-    <Column size="md-4 sm-4" score={nav.score}>
-      <h1>Score: {this.state.count}</h1>
-    </Column>)}
-  </Row>
-</Container>; */

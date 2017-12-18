@@ -1,12 +1,11 @@
 .card {
-  /* background: #444; */
-  border: 4px rgb(133, 161, 173) solid;
+  border: 4px rgb(99, 99, 99) solid;
   border-radius: 2px;
   width: 150px;
   height: 150px;
   margin: 1rem;
   position: relative;
-  box-shadow: 4px 4px 10px #999;
+  box-shadow: 4px 4px 10px rgb(56, 56, 56);
   transition: all .2s ease-in-out;
 }
 
@@ -18,21 +17,14 @@
 
 .card > .img-container > img {
   height: 100%;
-  /* background-size: cover; */
 }
 
 .card:hover {
-  /* opacity: 0.8; */
-  /* width: 210px;
-  height: 210px; */
-  /* transform: scale(1.10); */
-  box-shadow: 8px 8px 20px #999;
+  box-shadow: 8px 8px 20px rgb(56, 56, 56);
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .card:active {
-  /* background-color: #3e8e41; */
-  /* box-shadow: 0 5px #666; */
   transform: translate(1px, 1px);
-
 }
