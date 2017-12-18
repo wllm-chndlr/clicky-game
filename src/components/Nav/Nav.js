@@ -4,19 +4,25 @@ import "./Nav.css";
 const Nav = props => (
   /* <h1 className="title">{props.children}</h1>; */
 
-  <nav className="navbar">
+  <nav>
+    <ul>
 
-    <h1 className="brand">
+      <li className="brand">
         <a href="/">{props.title}</a>
-    </h1>
-  
-    <h1>Right/wrong: {props.rightwrong}</h1>
-  
-    <h1>Score: {props.score} | Top Score: {props.topscore}</h1>
-  
+      </li>
+
+      <li id="rw">{props.rightwrong}</li>
+
+      <li>
+        Current Score: {props.score}
+      </li>
+
+      <li>
+        Top Score: {props.topscore}
+      </li>
+
+    </ul>
   </nav>
 );
-
-
 
 export default Nav;

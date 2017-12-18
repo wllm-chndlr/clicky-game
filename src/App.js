@@ -14,27 +14,40 @@ class App extends Component {
   state = {
     friends,
     count: 0,
-    topscore: 0
+    topscore: 0,
+    rightwrong: ""
   };
 
-  // handleIncrement increments this.state.count by 1
+  handleShuffle = () => {
+    for (let i = friends.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [friends[i], friends[j]] = [friends[j], friends[i]];
+    }
+    // this.setState({ friends });
+    console.log(friends);
+  };
+
   handleIncrement = () => {
-    // We always use the setState method to update a component's state
-    this.setState({ count: this.state.count + 1 });
-    this.setState({ topscore: this.state.count + 1});
-  };
+    this.setState({
+      count: this.state.count + 1,
+      rightwrong: "Correct!"
+    });
 
-  handleCardClick = () => {
-    const shuffleArray = friend => friends.sort(() => Math.random() - 0.5);
-    this.setState({ friends })
+    // if (this.state.topscore > this.state.count) { 
+    //   this.setState({topscore: this.state.topscore + 1});
 
-  }
+    this.handleShuffle();
+    };
+  
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+  handleReset = () => {
+    // this.setState({topscore: this.state.count});
+    this.setState({ 
+      count: 0,
+      topscore: this.state.topscore,
+      rightwrong: "Bork!"
+    });
+    this.handleShuffle();
   };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
@@ -42,13 +55,16 @@ class App extends Component {
     return (
       <Wrapper>
         <Nav
-          title='Clicky Game'
-          score={this.state.count}
-          topscore={this.state.topscore}
-          >        
-        </Nav>
+              title="Simpsons Clicky Game"
+              score={this.state.count}
+              topscore={this.state.topscore}
+              rightwrong={this.state.rightwrong}
+        />
 
-        <Title>Click on the cards or whatever</Title>
+        <Title>
+          Try to click on each character without hitting any duplicates, or you'll
+          DIE!!!
+        </Title>
 
         <Container>
           <Row>
@@ -57,10 +73,11 @@ class App extends Component {
                 <FriendCard
                   key={friend.id}
                   handleIncrement={this.handleIncrement}
-                  shuffleArray={this.shuffleArray}
-                  removeFriend={this.removeFriend}
+                  handleShuffle={this.handleShuffle}
+                  handleReset={this.handleReset}
                   id={friend.id}
                   image={friend.image}
+                  // clicked={friend.clicked}
                 />
               </Column>
             ))}
