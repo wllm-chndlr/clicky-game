@@ -7,4 +7,5 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
+  padding-bottom: 50px;
 }
