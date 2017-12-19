@@ -6,6 +6,6 @@
 
 #### Check it out [here](https://wllm-chndlr.github.io/clicky-game/).
 
-###### Built with React
+#### Built with **React**
 
 ![screenshot](public/screenshot.png)
