@@ -4,8 +4,6 @@
 
 #### Click on each character once to win the game. But don't click on a character twice, or it's game over for you!
 
-#### Check it out [here](https://wllm-chndlr.github.io/clicky-game/).
-
-#### Built with **React**
+#### Built with React. Check it out [here](https://wllm-chndlr.github.io/clicky-game/).
 
 ![screenshot](public/screenshot.png)
