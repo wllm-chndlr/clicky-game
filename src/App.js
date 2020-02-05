@@ -8,6 +8,7 @@ import Row from "./Row";
 import Column from "./Column";
 import friends from "./friends.json";
 import "./App.css";
+import Message from "./components/Message";
 
 function shuffleFriends(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -73,13 +74,16 @@ class App extends Component {
           title="Simpsons Clicky Game"
           score={this.state.currentScore}
           topScore={this.state.topScore}
-          rightWrong={this.state.rightWrong}
         />
 
         <Title>
           Try to click on each character, but don't hit any duplicates, or
           we'll release the hounds!!!
         </Title>
+
+        <Message
+          rightWrong={this.state.rightWrong}
+        />
 
         <Container>
           <Row>

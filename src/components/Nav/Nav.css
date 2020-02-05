@@ -4,8 +4,11 @@ nav {
   color: #fff;
   margin-bottom: 50px;
   background-color: rgb(56, 56, 56);
-  height: auto;
+  height: 100px;
   font-family: 'Bungee', cursive;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 a {
@@ -15,19 +18,6 @@ a {
 a:hover {
   color: #fed420;
   text-decoration: none;
-}
-
-nav li {
-  display: inline-block;
-  padding: 26px 0;
-  width: 25%;
-  /* text-align: center; */
-}
-
-ul {
-  /* padding-left: 0px; */
-  display: flex;
-  align-items: center;
 }
 
 @media only screen and (max-width: 750px) {
