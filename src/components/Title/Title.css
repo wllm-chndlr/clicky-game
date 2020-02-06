@@ -1,9 +1,18 @@
-.title {
+/* .title {
   width: 100%;
   text-align: right;
   font-size: 2rem;
   color: #444;
   margin-bottom: 50px;
   padding-left: 3%;
-  padding-right: 3%;  
+  padding-right: 3%;
+} */
+
+.title {
+  grid-area: 2 / 2 / 3 / 6;
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   background: rgb(175, 175, 175);
   background-image: url('https://images7.alphacoders.com/400/thumb-1920-400623.jpg');
   height: 100%;
@@ -7,5 +7,20 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
-  padding-bottom: 50px;
+} */
+
+.wrapper {
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+  height: 100%;
+  width: 100%;
+  background-image: url('https://images7.alphacoders.com/400/thumb-1920-400623.jpg');
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: center center;
 }

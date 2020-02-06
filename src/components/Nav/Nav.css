@@ -1,4 +1,4 @@
-nav {
+/* nav {
   width: 100%;
   font-size: 3rem;
   color: #fff;
@@ -9,6 +9,18 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+} */
+
+nav {
+  background-color: rgb(56, 56, 56);
+  color: #fff;
+  display: flex;
+  grid-area: 1 / 1 / 2 / 7;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  /* width: 100%; */
 }
 
 a {
@@ -22,6 +34,6 @@ a:hover {
 
 @media only screen and (max-width: 750px) {
   #cur-sco, #top-sco {
-    font-size: 2rem;
+    /* font-size: 2rem; */
   }
 }

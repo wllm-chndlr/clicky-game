@@ -86,7 +86,7 @@ class App extends Component {
         />
 
         <Container>
-          <Row>
+          {/* <Row>
             {this.state.friends.map(friend => (
               <Column size="md-3 sm-6">
                 <FriendCard
@@ -98,9 +98,9 @@ class App extends Component {
                   id={friend.id}
                   image={friend.image}
                 />
-              </Column>
+              // </Column>
             ))}
-          </Row>
+          </Row> */}
         </Container>
       </Wrapper>
     );
