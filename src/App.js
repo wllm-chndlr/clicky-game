@@ -56,7 +56,7 @@ class App extends Component {
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
-      rightWrong: "Glaven!",
+      rightWrong: "Glaven! Click a card to restart.",
       clicked: []
     });
     this.handleShuffle();
@@ -81,14 +81,9 @@ class App extends Component {
           we'll release the hounds!!!
         </Title>
 
-        <Message
-          rightWrong={this.state.rightWrong}
-        />
-
         <Container>
-          {/* <Row>
             {this.state.friends.map(friend => (
-              <Column size="md-3 sm-6">
+              <div class="card-container">
                 <FriendCard
                   key={friend.id}
                   handleClick={this.handleClick}
@@ -97,11 +92,14 @@ class App extends Component {
                   handleShuffle={this.handleShuffle}
                   id={friend.id}
                   image={friend.image}
-                />
-              // </Column>
+                  />
+              </div>
             ))}
-          </Row> */}
         </Container>
+
+        <Message
+          rightWrong={this.state.rightWrong}
+        />
       </Wrapper>
     );
   }

@@ -1,6 +1,31 @@
 #rw {
-    /* position: absolute;
-    top: 50px;
-    left: 100px; */
-    font-size: 10rem;
+  background-color: #444;
+  color: #fed420;
+  display: flex;
+  font-size: 2rem;
+  grid-area: 4 / 1 / 5 / 4;
+  justify-content: center;
+  align-items: center;
+}
+
+#rw:empty {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #rw {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #rw {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #rw {
+    font-size: 1rem;
+  }
 }
