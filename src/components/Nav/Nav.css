@@ -1,18 +1,20 @@
 nav {
-  width: 100%;
-  font-size: 3rem;
-  color: #fff;
-  margin-bottom: 50px;
   background-color: rgb(56, 56, 56);
-  height: 100px;
-  font-family: 'Bungee', cursive;
+  color: #fff;
   display: flex;
-  justify-content: space-evenly;
+  grid-area: 1 / 1 / 2 / 4;
   align-items: center;
+  justify-content: space-between;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
 }
 
 a {
   color: #fed420;
+  font-size: 3rem;
+  text-decoration: none;
+
 }
 
 a:hover {
@@ -20,8 +22,27 @@ a:hover {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 750px) {
-  #cur-sco, #top-sco {
+@media (max-width: 900px) {
+  a {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  nav {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 500px) {
+  a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  a {
+    font-size: 1.2rem;
   }
 }
