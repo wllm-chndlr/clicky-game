@@ -81,7 +81,7 @@ class App extends Component {
 
         <Container>
             {this.state.friends.map(friend => (
-              <div class="card-container">
+              <div className="card-container">
                 <FriendCard
                   key={friend.id}
                   handleClick={this.handleClick}

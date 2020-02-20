@@ -7,11 +7,11 @@ const Nav = props => (
         <a href="/clicky-game/">{props.title}</a>
       </div>
 
-      <div class="scores">
-        <div class="current-score">
+      <div className="scores">
+        <div className="current-score">
           Current Score: {props.score}
         </div>
-        <div class="current-score">
+        <div className="current-score">
           Top Score: {props.topScore}
         </div>
       </div>
