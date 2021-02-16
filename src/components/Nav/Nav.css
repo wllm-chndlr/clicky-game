@@ -32,6 +32,16 @@ a:hover {
   nav {
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 0.5rem;
+  }
+
+  .scores {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .current-score {
+      margin-right: 1rem;
   }
 }
 

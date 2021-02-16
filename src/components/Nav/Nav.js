@@ -11,7 +11,7 @@ const Nav = props => (
         <div className="current-score">
           Current Score: {props.score}
         </div>
-        <div className="current-score">
+        <div className="top-score">
           Top Score: {props.topScore}
         </div>
       </div>
